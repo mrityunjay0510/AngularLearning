@@ -1,0 +1,26 @@
+<!-- <div class="container">
+  app component
+  <br>
+  <br>
+  <app-side-bar-toggle [sideBar]="ram"></app-side-bar-toggle>
+  <app-side-bar #ram></app-side-bar>
+</div> -->
+
+<div class="container">
+  app component
+  <br>
+  <br>
+  <app-side-bar-toggle (toggle)="toggleSideBar()"></app-side-bar-toggle>
+  <app-side-bar [isOpen]="sideBarIsOpened"></app-side-bar>
+</div>
+
+
+
+
+
+
+
+
+
+
+
