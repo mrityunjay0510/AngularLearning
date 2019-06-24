@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, HostBinding, Inject } from '@angular/core';
 import { SideBarService } from './side-bar.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { SideBarService } from './side-bar.service';
 })
 export class SideBarComponent implements OnInit {
 
-  constructor(private sideBarService:SideBarService) { }
+  constructor(@Inject(SideBarService) private sideBarService:SideBarService) { }
 
   @HostBinding('class.is-open') isOpen=false;
 
