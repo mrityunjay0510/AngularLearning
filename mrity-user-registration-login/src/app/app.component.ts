@@ -10,7 +10,7 @@ export class AppComponent {
         this.authenticationService.currentUser.subscribe(x=>this.currentUser=x);
     }
 
-    logOut(){
+    logout(){
         this.authenticationService.logout();
         this.router.navigate(['/login']);
     }

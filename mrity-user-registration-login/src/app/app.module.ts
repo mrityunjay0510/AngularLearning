@@ -7,8 +7,8 @@ import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { appRoutingModule } from './app.routing';
-import { fakeBackendProvider } from './_helpers';
-import { HttpClientModule } from '@angular/common/http';
+import { fakeBackendProvider, JwtInterceptor, ErrorInterceptor } from './_helpers';
+import { HttpClientModule ,HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
     imports: [
@@ -27,6 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
         AppComponent
     ],
     providers:[
+        { provide : HTTP_INTERCEPTORS, useClass:JwtInterceptor, multi:true },
+        { provide : HTTP_INTERCEPTORS, useClass:ErrorInterceptor, multi:true },
         fakeBackendProvider
     ]
 })

@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
     submitted:boolean=false;
     returnUrl:string;
     error:string;
+    success: string;
 
     constructor(
         private formBuilder:FormBuilder,
@@ -38,12 +39,16 @@ export class LoginComponent implements OnInit {
 
     onSubmit(){
         this.submitted=true;
+
+        this.error = null;
+        this.success = null;
+
         if(this.loginForm.invalid){
             return;
         }
 
         this.loding =true;
-        this.authenticationService.login(this.f.userName.value, this.f.password.value)
+        this.authenticationService.login(this.f.username.value, this.f.password.value)
         .pipe(first())
         .subscribe( data=>{
             this.router.navigate([this.returnUrl]);
