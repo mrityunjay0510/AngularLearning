@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthenticationService } from '../_services';
+import { AuthenticationService , AlertService } from '../_services';
 import { first } from 'rxjs/operators';
 
 @Component({ 
@@ -19,7 +19,8 @@ export class LoginComponent implements OnInit {
         private formBuilder:FormBuilder,
         private route:ActivatedRoute,
         private router:Router,
-        private authenticationService:AuthenticationService
+        private authenticationService:AuthenticationService,
+        private alertService:AlertService
     ){
         if(this.authenticationService.currentUserValue){
             this.router.navigate(['/']);
@@ -40,8 +41,7 @@ export class LoginComponent implements OnInit {
     onSubmit(){
         this.submitted=true;
 
-        this.error = null;
-        this.success = null;
+        this.alertService.clear();
 
         if(this.loginForm.invalid){
             return;
@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
             this.router.navigate([this.returnUrl]);
         },
          error=>{
-             this.error=error;
+            this.alertService.error(error);
              this.loding=false;
          }
         )

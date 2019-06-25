@@ -9,6 +9,7 @@ import { RegisterComponent } from './register';
 import { appRoutingModule } from './app.routing';
 import { fakeBackendProvider, JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { HttpClientModule ,HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AlertComponent } from './_components';
 
 @NgModule({
     imports: [
@@ -21,7 +22,8 @@ import { HttpClientModule ,HTTP_INTERCEPTORS } from '@angular/common/http';
         AppComponent,
         HomeComponent,
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
+        AlertComponent
     ],
     bootstrap: [
         AppComponent
