@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:4000'
+  apiUrl: 'http://localhost:4000',
+  clientID:'2a2b948a-ae6b-48ce-adbb-750c29b4c5fb'
 };
 
 
