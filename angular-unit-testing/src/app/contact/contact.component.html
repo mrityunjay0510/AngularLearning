@@ -1,0 +1,17 @@
+<p>
+  contact works!
+</p>
+<form id="contact-form" [fromGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+  <div class="from-group">
+    <label for="" class="center-block">Name:
+      <input class="form-control" formControlerName="name">
+    </label>
+    <label for="" class="center-block">Email:
+        <input class="form-control" formControlerName="email">
+    </label>
+    <label for="" class="center-block">Text:
+          <input class="form-control" formControlerName="text">
+    </label>
+  </div>
+  <button type="submit" [disabled]="!contactForm.valid" class="btn btn-success">Save</button>
+</form>
