@@ -1,0 +1,18 @@
+<!-- <section class="filter-wrapper">
+  <div class="keyword-wrapper">
+ <input type="text" id="keyword" placeholder="Search for city..." autofocus/>
+   </div>
+ <ul class="filter-select">
+   <li class="filter-select-list"><img src="" alt="" width="50" height="50"><p class="artist-name"></p>
+ <span class="tags"></span>
+ </ul>
+ </section> -->
+
+
+
+<input type="text" id="txtCity" list="cityNames" (change)="onCityChange($event)">
+<datalist id="cityNames">
+  <option *ngFor="let city of cities" [value]="city.name">{{city.name}}</option>
+</datalist>
+<input type="button" [disabled]="!isCitySelected" value="Fetch Data" (click)="fetchWeatherInfo()">
+

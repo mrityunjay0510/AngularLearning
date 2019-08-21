@@ -1,0 +1,5 @@
+<!-- <router-outlet></router-outlet> -->
+<app-citysearch (weatherInfo) ="sendEventDataToWeatherInfo($event)" ></app-citysearch>
+<div style="border: 2px solid red">
+  <app-weatherinfo  [weatherDetails]="weatherData"></app-weatherinfo>
+</div>
