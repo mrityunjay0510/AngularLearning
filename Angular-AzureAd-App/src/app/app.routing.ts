@@ -8,7 +8,7 @@ import { MsalGuard } from '@azure/msal-angular';
 const routes : Routes =[
     { path:'', component:HomeComponent ,canActivate:[AuthGuard]},
     { path:'register', component:RegisterComponent},
-    { path:'login' , component:LoginComponent,canActivate : [MsalGuard]},
+    { path:'login' , component:LoginComponent,canActivate : [AuthGuard]},
     {path:'**', redirectTo:''}
 ];
 
