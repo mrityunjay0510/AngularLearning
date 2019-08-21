@@ -1,0 +1,44 @@
+<div *ngIf="isDataLoaded" id="weather-widget" class="weather-widget">
+    <h2 class="weather-widget__city-name">Weather in {{weatherDetails.name}}, {{weatherDetails.sys.country}}</h2>
+    <h3 class="weather-widget__temperature"><img class="weather-widget__img"
+        src="https://openweathermap.org/img/wn/50d@2x.png" alt="Weather in {{weatherDetails.name}}, {{weatherDetails.sys.country}}" width="50" height="50">{{weatherDetails.main.temp}} °C</h3>
+    <p class="weather-widget__main">{{weatherDetails.weather[0].main}}</p>
+    <p>17:13 Aug 18</p>
+    <table class="weather-widget__items">
+      <tbody>
+        <tr class="weather-widget__item">
+          <td>Wind</td>
+          <td id="weather-widget-wind">{{weatherDetails.weather[0].description}},
+            {{weatherDetails.wind.speed}} m/s, ( {{weatherDetails.wind.deg}} )</td>
+        </tr>
+        <tr class="weather-widget__item">
+          <td>Cloudiness</td>
+          <td id="weather-widget-cloudiness">Scattered clouds</td>
+        </tr>
+        <tr class="weather-widget__item">
+          <td>Pressure</td>
+          <td>{{weatherDetails.main.pressure}} hpa</td>
+        </tr>
+        <tr class="weather-widget__item">
+          <td>Humidity</td>
+          <td>{{weatherDetails.main.humidity}} %</td>
+        </tr>
+        <tr class="weather-widget__item">
+          <td>Sunrise</td>
+          <td>{{sunRise}} </td>
+        </tr>
+        <tr class="weather-widget__item">
+          <td>Sunset</td>
+          <td>{{sunSet}} </td>
+        </tr>
+        <tr class="weather-widget__item">
+          <td>Geo coords</td>
+          <td><a href="/weathermap?zoom=8&amp;lat=26.85&amp;lon=80.92" class="weather-widget__link">[<span
+                id="wrong-data-lat">26.85</span>,&nbsp;<span id="wrong-data-lon">80.92</span>]</a></td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+
+
