@@ -22,7 +22,7 @@ import { environment } from '@environments/environment';
         MsalModule.forRoot({
             clientID: environment.clientID,
             authority: "https://login.microsoftonline.com/shivanshi2002.onmicrosoft.com/",
-            redirectUri: "http://localhost:4200/",
+            redirectUri: "http://localhost:4200",
             validateAuthority : true,
             cacheLocation : "localStorage",
             postLogoutRedirectUri: "http://localhost:4200/",
